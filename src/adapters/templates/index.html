@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Calcolatore di Imposte</title>
+</head>
+<body>
+    <h1>Calcolatore di Imposte</h1>
+    <form method="post">
+        <label for="amount">Importo:</label>
+        <input type="number" name="amount" id="amount" step="0.01" required>
+        <button type="submit">Calcola</button>
+    </form>
+
+    {% if tax %}
+        <p>L'imposta su {{ amount }} è {{ tax }}</p>
+    {% endif %}
+
+        {% if error %}
+                <p style="color: red;">{{ error }}</p>
+        {% endif %}
+</body>
+</html>
